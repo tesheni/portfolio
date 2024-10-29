@@ -55,3 +55,7 @@
   float: right;
   padding-right: 8px;
 }
+
+h1 {
+  text-align: right;
+}
