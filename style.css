@@ -22,7 +22,7 @@
   width:100%;
   text-align: left;
   cursor: pointer;
-  outline: none;
+  outline: #a64dff;
 }
 
 /* On mouse-over */
