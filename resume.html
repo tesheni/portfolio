@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PORFILO</title>
+<link rel="stylesheet" href="style.css">
 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color:#89c5fa;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #c6a0f2;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #adabf5;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="myDiv">
+  <h1>Thomas A Edison CTE HIGHSCHOOL</h1>
+  <p>Tesheni Perera.</p>
+</div>
+<center> <h2>WELCOMEEEE!!!!</h2> </center>
+
+<header>
+  <h2> Tesheni's Portfolio</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">10th Grade</a></li>
+      <li><a href="#">11th Grade</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>ABOUT ME</h1>
+    <p>Hello, this is my profilo that will give yo a run down on what I'v been doing for the past years in Web App Development. I'm a former student in Thomas A Edison</p>
+    <p>I love writing short stories beause it can help me express myself. My hobbies that I take part in--if I have in time--painting, dancing, and painting my nails in different designs.</p>
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+<div class="sidenav">
+  <a href="#resume.html">Resume</a>
+  <a href="#services">11th Grade Projects</a>
+  <a href="#clients">10th Grade</a>
+  <a href="#contact">Contact</a>
+  <button class="dropdown-btn">Dropdown
+    <i class="fa fa-caret-down"></i>
+  </button>
+ 
+  <a href="#contact">Search</a>
+</div>
+</body>
+</html>
