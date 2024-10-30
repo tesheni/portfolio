@@ -56,4 +56,9 @@
   padding-right: 8px;
 }
 
+.myDiv h1 {
+  font-size: 40px; /* Change this value to your desired size */
+  color: #000; /* Optional: Change color if needed */
+}
+
 
