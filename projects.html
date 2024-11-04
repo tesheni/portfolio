@@ -66,14 +66,20 @@
             border: 2px solid #999;
             border-radius: 8px;
             margin: 15px;
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             width: calc(30% - 30px); /* Adjust width to fit three boxes in a row */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: auto; /* Allow height to adjust based on content */
         }
 
         .project-box h2 {
             margin-top: 0;
             color: #333;
+            font-size: 18px; /* Adjusted font size */
+        }
+
+        .project-box p {
+            font-size: 14px; /* Smaller font size for the description */
         }
 
         .project-box img {
@@ -81,6 +87,8 @@
             height: auto;
             border-radius: 5px;
             margin-top: 10px;
+            max-height: 150px; /* Limit the height of images */
+            object-fit: cover; /* Maintain aspect ratio */
         }
 
         .project-link {
@@ -147,4 +155,3 @@
 
 </body>
 </html>
-
