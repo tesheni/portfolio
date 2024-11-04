@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Optima&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Pacifico', cursive;
@@ -47,6 +47,7 @@
             margin-bottom: 20px;
             font-family: 'Optima', sans-serif; /* Optima font for the banner */
             border-radius: 15px; /* Rounded corners */
+            width: calc(100% - 220px); /* Full width minus sidenav */
         }
 
         .banner h1 {
@@ -54,88 +55,10 @@
             color: #333;
         }
 
-        .project-box {
-            background-color: #add8e6; /* Light blue boxes */
-            border: 2px solid #999;
-            border-radius: 8px;
-            margin: 15px auto;
-            padding: 15px;
-            width: calc(80% - 30px); /* Adjust width to account for side menu */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .project-container {
+            display: flex; /* Use flexbox for horizontal layout */
+            flex-wrap: wrap; /* Allow wrapping to the next line */
             margin-left: 220px; /* Space for side menu */
         }
 
-        .project-box h2 {
-            margin-top: 0;
-            color: #333;
-        }
-
-        .project-box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="sidenav">
-        <a href="resume.html">Resume</a>
-        <a href="projects.html">11th Grade Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="#contact">Search</a>
-    </div>
-
-    <div class="banner">
-        <h1>My Projects</h1>
-    </div>
-
-    <section class="project-box">
-        <h2>Project 1: Awesome Project</h2>
-        <p>Description of the project goes here. You can include details about the project, its purpose, and what technologies were used.</p>
-        <img src="project1-image.png" alt="Project 1 Image">
-        <a class="project-link" href="https://linktoyourproject1.com">View Project</a>
-    </section>
-
-    <section class="project-box">
-        <h2>Project 2: Another Great Project</h2>
-        <p>Description of the project goes here. You can include details about the project, its purpose, and what technologies were used.</p>
-        <img src="project2-image.png" alt="Project 2 Image">
-        <a class="project-link" href="https://linktoyourproject2.com">View Project</a>
-    </section>
-
-    <section class="project-box">
-        <h2>Project 3: Cool Project</h2>
-        <p>Description of the project goes here. You can include details about the project, its purpose, and what technologies were used.</p>
-        <img src="project3-image.png" alt="Project 3 Image">
-        <a class="project-link" href="https://linktoyourproject3.com">View Project</a>
-    </section>
-
-    <section class="project-box">
-        <h2>Project 4: Innovative Project</h2>
-        <p>Description of the project goes here. You can include details about the project, its purpose, and what technologies were used.</p>
-        <img src="project4-image.png" alt="Project 4 Image">
-        <a class="project-link" href="https://linktoyourproject4.com">View Project</a>
-    </section>
-
-    <section class="project-box">
-        <h2>Project 5: Final Project</h2>
-        <p>Description of the project goes here. You can include details about the project, its purpose, and what technologies were used.</p>
-        <img src="project5-image.png" alt="Project 5 Image">
-        <a class="project-link" href="https://linktoyourproject5.com">View Project</a>
-    </section>
-
-</body>
-</html>
+        .proj
