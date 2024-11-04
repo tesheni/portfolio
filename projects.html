@@ -12,6 +12,7 @@
             padding: 20px;
             background-color: #ffccdd; /* Baby pink background */
             display: flex;
+            flex-direction: column; /* Ensure the body content stacks vertically */
         }
 
         .sidenav {
@@ -59,6 +60,7 @@
             display: flex; /* Use flexbox for horizontal layout */
             flex-wrap: wrap; /* Allow wrapping to the next line */
             margin-left: 220px; /* Space for side menu */
+            justify-content: flex-start; /* Align items to the left */
         }
 
         .project-box {
@@ -112,10 +114,12 @@
         <a href="#contact">Search</a>
     </div>
 
+    <!-- Banner on top of the boxes -->
     <div class="banner">
         <h1>My Projects</h1>
     </div>
 
+    <!-- Project Boxes Container -->
     <div class="project-container">
         <section class="project-box">
             <h2>Project 1: Awesome Project</h2>
