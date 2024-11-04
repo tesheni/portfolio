@@ -140,6 +140,16 @@ nav {
     background-color: #555; /* Change background on hover */
 }
 
+.container{
+  
+bordr:3px solid #658aa3;
+margin:15px;
+padding:10px;
+height:620px;
+backgrund-color:rgba(240, 246, 250, 0.5);
+
+
+}
 
 .wave{
   background-color:rgba(156,218,240, 0.6)
