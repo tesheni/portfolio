@@ -235,5 +235,10 @@ button:hover {
     background-color: #4cae4c;
 }
 
-
+.hidden-info {
+    display: none; /* Initially hidden */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Add a background */
+    padding: 10px; /* Optional: Add padding */
+    border-radius: 5px; /* Optional: Add rounded corners */
+}
 
