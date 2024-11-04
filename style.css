@@ -139,3 +139,38 @@ nav {
 .dropdown ul li a:hover {
     background-color: #555; /* Change background on hover */
 }
+
+
+.wave{
+  background-color:rgba(156,218,240, 0.6)
+  height:55px
+  overflow:hidden;
+  width:80%
+  position:relative;
+  left:10%
+  transition:height 4s;
+
+}
+
+
+.wave:hover{
+  height:540px
+  z-index:1;
+
+}
+
+#cfu3{
+
+background-color:rgba(187, 218, 240, 0.6);
+  border:2px solid #ffffff;
+  padding:5px;
+  display:block:
+  margin:1px;
+  font-family: 'Times New Roman' , serif;
+  font-size: 1em;
+
+  }
+
+
+
+
