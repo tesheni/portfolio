@@ -1,113 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>PORFILO</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesheni's Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #9b59b6; /* Violet background */
+            line-height: 1.6;
+            display: flex;
+            margin: 0;
+        }
 
-body {
-  font-family: 'Times New Roman', serif;
-}
+        /* Side Navigation Styles */
+        .sidenav {
+            height: 100%;
+            width: 250px; /* Adjust the width of the sidebar */
+            background-color: #8e44ad; /* Violet shade */
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            padding-right: 10px;
+        }
 
-/* Style the header */
-header {
-  background-color:#89c5fa;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
+        .sidenav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
+        .sidenav a:hover {
+            background-color: #7f3d9c;
+            color: #f2e6ff;
+        }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-article {
-  float: right;
-  padding: 10px;
-  width: 70%;
-  background-color: #c6a0f2;
-  height: 150px; /* only for demonstration, should be removed */
-  overflow: hidden;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #7f3d9c;
+            min-width: 160px;
+            z-index: 1;
+        }
 
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-/* Style the footer */
-footer {
-  background-color: #adabf5;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
+        .dropdown-content a:hover {
+            background-color: #9b59b6;
+        }
 
-.myDiv {
-  border: 5px outset red;
-  background-color: lightblue;
-  text-align: center;
-}
+        /* Content section */
+        .content {
+            margin-left: 260px; /* Shift content to the right to make space for sidenav */
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+        }
 
-  
-</style>
+        /* Title for Resume */
+        h1 {
+            font-size: 3em;
+            color: white;
+            margin-top: 50px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Box around the View Resume Button */
+        .button-box {
+            display: inline-block;
+            padding: 30px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #f4f4f4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .button-box a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1.5em;
+            font-weight: 600;
+            padding: 15px 30px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-box a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<div class="myDiv">
-  <h1>Thomas A Edison CTE HIGHSCHOOL</h1>
-  <p>Tesheni Perera.</p>
-</div>
 
-<header>
-  <h2> RESUME </h2>
-</header>
+    <!-- Side Navigation -->
+    <div class="sidenav">
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        
+        <!-- Dropdown for Projects -->
+        <div class="dropdown">
+            <a href="projects.html">Projects</a>
+            <div class="dropdown-content">
+                <a href="projects.html">11th Grade</a>
+            </div>
+        </div>
+    </div>
 
-<section>
-  
-  <article>
- <a href="RESUMEPAGE" target="_blank">LINK HERE TO REVIEW MY RESUME!</a>
-   
- </center>
-  </article>
-</section>
+    <!-- Content Section -->
+    <div class="content">
 
-<footer>
- 
-</footer>
-<div class="sidenav">
- <a href="index.html">HOME</a>
-  <a href="contact.html">Contact</a>
-   <a href="projects.html">Projects(11th)</a>
-    <i class="fa fa-caret-down"></i>
-  </button>
- 
-  
-</div>
+        <!-- Resume Title -->
+        <h1>RESUME</h1>
+
+        <!-- Box around the "View My Resume" button -->
+        <div class="button-box">
+            <a href="resume.pdf" target="_blank">View My Resume</a>
+        </div>
+
+    </div> <!-- End of Content Section -->
+
 </body>
 </html>
