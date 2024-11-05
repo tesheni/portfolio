@@ -9,8 +9,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f4f4f4;
+            display: flex;
         }
 
         h1 {
@@ -18,16 +19,48 @@
             color: #333;
         }
 
+        /* Side Navigation Styling */
+        .sidenav {
+            height: 100vh;
+            width: 200px;
+            background-color: #007BFF;
+            padding-top: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .sidenav a {
+            padding: 12px 16px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #0066cc;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidenav a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Contact Section Styling */
         .contact-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin-left: 220px; /* Space for the side navigation */
+            margin-top: 20px;
             background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            gap: 20px;
         }
 
         .contact-info {
@@ -60,60 +93,20 @@
             border-radius: 8px;
         }
 
-        /* Side Dropdown styles */
-        .dropdown {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #ffffff;
-            border: 1px solid #007BFF;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .dropdown-button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .dropdown-content {
-            display: none;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            border-top: 1px solid #007BFF;
-            border-radius: 0 0 8px 8px;
-            overflow: hidden;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Contact Me</h1>
+    <!-- Side Navigation -->
+    <div class="sidenav">
+        <a href="resume.html">Resume</a>
+        <a href="index.html">HOME</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
+    <!-- Contact Section -->
     <div class="contact-container">
+        <h1>Contact Me</h1>
         <div class="contact-info">
             <div class="info-item">
                 Name: Tesheni Perera
@@ -131,14 +124,7 @@
         <img src="picture.png" alt="Profile Picture" class="profile-image">
     </div>
 
-    <div class="dropdown">
-        <button class="dropdown-button">Menu</button>
-        <div class="dropdown-content">
-            <a href="index.html">Home</a> <!-- Change this to your home page link -->
-            <a href="projects.html">Projects</a> <!-- Change this to your projects page link -->
-        </div>
-    </div>
-
+    <!-- Banner Section -->
     <div class="banner">
         Thank you for visiting my contact page!
     </div>
