@@ -12,6 +12,8 @@
             padding: 0;
             background-color: #f4f4f4;
             display: flex;
+            flex-direction: column; /* Ensures content is stacked vertically */
+            min-height: 100vh; /* Ensures body stretches to full height of the screen */
         }
 
         h1 {
@@ -76,6 +78,7 @@
             background: #e9f7fe;
         }
 
+        /* Banner Section */
         .banner {
             margin-top: 20px;
             text-align: center;
@@ -91,6 +94,16 @@
             height: auto;
             border: 5px solid white;
             border-radius: 8px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto; /* Pushes footer to the bottom */
+            width: 100%;
         }
 
     </style>
@@ -129,5 +142,11 @@
         Thank you for visiting my contact page!
     </div>
 
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Tesheni Perera. All rights reserved.
+    </footer>
+
 </body>
 </html>
+
