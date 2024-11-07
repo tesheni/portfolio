@@ -1,3 +1,40 @@
+<?php
+// PHP code to process the form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+        
+        // Sanitize form inputs
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $message = htmlspecialchars($_POST['message']);
+        
+        // Basic email validation
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error = "Invalid email address.";
+        } else {
+            // Email details
+            $to = "teshenip@nycstudents.net"; // Replace with your email
+            $subject = "New Contact Message from $name";
+            $body = "<h2>Message from $name</h2>
+                     <p><strong>Email:</strong> $email</p>
+                     <p><strong>Message:</strong><br/>$message</p>";
+            $headers = "From: $email\r\n";
+            $headers .= "Reply-To: $email\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+            // Try to send the email
+            if (mail($to, $subject, $body, $headers)) {
+                $success = "Message sent successfully!";
+            } else {
+                $error = "There was a problem sending your message. Please try again later.";
+            }
+        }
+    } else {
+        $error = "Please fill in all fields.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,102 +60,4 @@
 
         /* Side Navigation Styling */
         .sidenav {
-            height: 100vh;
-            width: 200px;
-            background-color: #e6ccff;
-            padding-top: 20px;
-            color: #ffccff;
-            display: flex;
-            flex-direction: column;
-            position: fixed; /* Fix it to the left */
-            top: 0;
-            left: 0;
-            padding-left: 20px;
-        }
-
-        .sidenav a {
-            padding: 12px 16px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #ff80ff;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidenav a:hover {
-            background-color: #cc66ff;
-        }
-
-        /* Contact Section Styling */
-        .contact-container {
-            margin-left: 240px; /* Create space between sidenav and contact section */
-            padding: 20px;
-            flex: 1; /* Take the rest of the space available */
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px; /* Limit the width of the contact content */
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-right: auto; /* Centers the content horizontally */
-            margin-left: auto; /* Centers the content horizontally */
-        }
-
-        .contact-info {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        .info-item {
-            margin: 15px 0;
-            padding: 10px;
-            border: 2px solid #007BFF;
-            border-radius: 8px;
-            background: #e9f7fe;
-        }
-
-        /* Center the Profile Image */
-        .profile-image {
-            width: 150px;
-            height: auto;
-            border: 5px solid white;
-            border-radius: 8px;
-            display: block; /* Makes the image a block element */
-            margin: 20px auto 0 auto; /* Centers the image horizontally */
-        }
-
-    </style>
-</head>
-<body>
-
-    <!-- Side Navigation -->
-    <div class="sidenav">
-        <a href="resume.html">Resume</a>
-        <a href="index.html">HOME</a>
-        <a href="projects.html">Projects</a>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="contact-container">
-        <h1>Contact Me</h1>
-        <div class="contact-info">
-            <div class="info-item">
-                Name: Tesheni Perera
-            </div>
-            <div class="info-item">
-                Email: teshenip@nycstudents.net
-            </div>
-            <div class="info-item">
-                Phone: (929) - 485 - 5818
-            </div>
-            <div class="info-item">
-                School Address: 165-65 84th Ave, Jamaica, NY 11432
-            </div>
-        </div>
-        <img src="Snapchat-1649114727.jpg" alt="Profile Picture" class="profile-image">
-    </div>
-
-</body>
-</html>
+      
