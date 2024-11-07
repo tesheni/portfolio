@@ -25,18 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $headers .= "Reply-To: $email\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-            // Try to send the email
-            if (mail($to, $subject, $body, $headers)) {
-                $success = "Message sent successfully!";
-            } else {
-                $error = "There was a problem sending your message. Please try again later.";
-            }
-        }
-    } else {
-        $error = "Please fill in all fields.";
-    }
-}
-?>
+    
 
 <!DOCTYPE html>
 <html lang="en">
