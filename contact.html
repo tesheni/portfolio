@@ -1,25 +1,43 @@
-
-
 <?php
-// PHP code to process the form submission
+$success = "";
+$error = "";
+
+// Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if all fields are set
     if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
         
-        // Sanitize form inputs
+        // Sanitize input data
         $name = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
         $message = htmlspecialchars($_POST['message']);
         
-        // Basic email validation
+        // Simple email validation
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $error = "Invalid email address.";
         } else {
-            // Email details
-            $to = "teshenip@nycstudents.net"; // Replace with your email
-           
-                     
+            // Prepare email content
+            $to = "teshenip@nycstudents.net"; // Your email address
+            $subject = "New Contact Message from $name";
+            $body = "<h2>Message from $name</h2>
+                     <p><strong>Email:</strong> $email</p>
+                     <p><strong>Message:</strong><br/>$message</p>";
+            $headers = "From: $email\r\n";
+            $headers .= "Reply-To: $email\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    
+            // Send email
+            if (mail($to, $subject, $body, $headers)) {
+                $success = "Thank you! Your message has been sent successfully.";
+            } else {
+                $error = "There was a problem sending your message. Please try again later.";
+            }
+        }
+    } else {
+        $error = "Please fill in all fields.";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Perpetua', serif;
@@ -35,60 +52,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             background-color:#f0e6ff;
             display: flex;
-            flex-direction: row; /* Allows side by side layout */
-            min-height: 100vh; /* Ensure full viewport height */
+            flex-direction: row;
+            min-height: 100vh;
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
-        /* Side Navigation Styling */
-        .sidenav {
-            height: 100vh;
-            width: 200px;
-            background-color: #e6ccff;
-            padding-top: 20px;
-            color: #ffccff;
-            display: flex;
-            flex-direction: column;
-            position: fixed; /* Fix it to the left */
-            top: 0;
-            left: 0;
-            padding-left: 20px;
-        }
-
-        .sidenav a {
-            padding: 12px 16px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #ff80ff;
-            transition: background-color 0.3s ease;
-        }
-
-        .sidenav a:hover {
-            background-color: #cc66ff;
-        }
-
-        /* Contact Section Styling */
         .contact-container {
-            margin-left: 240px; /* Create space between sidenav and contact section */
+            margin-left: 240px;
             padding: 20px;
-            flex: 1; /* Take the rest of the space available */
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px; /* Limit the width of the contact content */
+            max-width: 800px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-right: auto; /* Centers the content horizontally */
-            margin-left: auto; /* Centers the content horizontally */
+            margin-right: auto;
+            margin-left: auto;
         }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -99,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background: #f7f7f7;
             font-size: 16px;
         }
-
         .contact-form button {
             padding: 12px 20px;
             background-color: #ff80ff;
@@ -110,58 +90,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         .contact-form button:hover {
             background-color: #cc66ff;
         }
-
-        .profile-image {
-            width: 150px;
-            height: auto;
-            border: 5px solid white;
-            border-radius: 8px;
-            display: block;
-            margin: 20px auto 0 auto;
-        }
-
-        /* Feedback Messages */
-        .message,
-        .error {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            width: 100%;
-        }
-
         .message {
             color: green;
             background-color: #d4edda;
             border: 1px solid #c3e6cb;
+            padding: 10px;
+            margin-bottom: 20px;
         }
-
         .error {
             color: red;
             background-color: #f8d7da;
             border: 1px solid #f5c6cb;
+            padding: 10px;
+            margin-bottom: 20px;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Side Navigation -->
-    <div class="sidenav">
-        <a href="resume.html">Resume</a>
-        <a href="index.html">HOME</a>
-        <a href="projects.html">Projects</a>
-    </div>
-
-    <!-- Contact Section -->
     <div class="contact-container">
         <h1>Contact Me</h1>
 
-        <!-- Form Feedback Message (success or error) -->
+        <!-- Success/Error Messages -->
         <?php if (isset($success)): ?>
             <div class="message"><?php echo $success; ?></div>
         <?php elseif (isset($error)): ?>
@@ -177,6 +130,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit">Send Message</button>
             </form>
         </div>
+    </div>
+
+</body>
+</html>
+
 
         <img src="Snapchat-1649114727.jpg" alt="Profile Picture" class="profile-image">
     </div>
