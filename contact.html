@@ -1,44 +1,3 @@
-<?php
-$success = "";
-$error = "";
-
-// Check if form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if all fields are set
-    if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
-        
-        // Sanitize input data
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $message = htmlspecialchars($_POST['message']);
-        
-        // Simple email validation
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Invalid email address.";
-        } else {
-            // Prepare email content
-            $to = "teshenip@nycstudents.net"; // Your email address
-            $subject = "New Contact Message from $name";
-            $body = "<h2>Message from $name</h2>
-                     <p><strong>Email:</strong> $email</p>
-                     <p><strong>Message:</strong><br/>$message</p>";
-            $headers = "From: $email\r\n";
-            $headers .= "Reply-To: $email\r\n";
-            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-            // Send email
-            if (mail($to, $subject, $body, $headers)) {
-                $success = "Thank you! Your message has been sent successfully.";
-            } else {
-                $error = "There was a problem sending your message. Please try again later.";
-            }
-        }
-    } else {
-        $error = "Please fill in all fields.";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,29 +74,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Contact Me</h1>
 
         <!-- Success/Error Messages -->
-        <?php if (isset($success)): ?>
-            <div class="message"><?php echo $success; ?></div>
-        <?php elseif (isset($error)): ?>
-            <div class="error"><?php echo $error; ?></div>
-        <?php endif; ?>
+        <div id="response-message"></div>
 
         <!-- Contact Form -->
         <div class="contact-form">
-            <form action="" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/your-endpoint" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
                 <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
     </div>
 
-</body>
-</html>
+    <script>
+        // Handle the form submission via JavaScript
+        const form = document.getElementById("contact-form");
+        const responseMessage = document.getElementById("response-message");
 
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
 
-        <img src="Snapchat-1649114727.jpg" alt="Profile Picture" class="profile-image">
-    </div>
+            // Fetch the form data and send it to Formspree via Fetch API
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Success: show Thank You message
+                    responseMessage.innerHTML = "<div class='message'>Thank you! Your message has been sent successfully.</div>";
+                    form.reset();  // Reset the form fields
+                } else {
+                    // Error: show error message
+                    responseMessage.innerHTML = "<div class='error'>There was a problem sending your message. Please try again later.</div>";
+                }
+            })
+            .catch(error => {
+                responseMessage.innerHTML = "<div class='error'>There was a problem sending your message. Please try again later.</div>";
+            });
+        });
+    </script>
 
 </body>
 </html>
