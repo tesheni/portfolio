@@ -65,12 +65,24 @@
             margin-left: auto;
         }
 
-        form {
-            padding: 20px;
-            background-color: #f7f7f7;
-            border: 2px solid #007BFF;
-            border-radius: 8px;
-            width: 100%;
+        /* Email Box Styling */
+        .contact-info-box {
+            background-color: #f4f4f4; /* Light gray background */
+            border: 2px solid #ccc;    /* Light gray border */
+            border-radius: 8px;        /* Rounded corners */
+            padding: 15px;             /* Space inside the box */
+            max-width: 300px;          /* Optional: limit width */
+            margin: 10px 0;            /* Space around the box */
+        }
+
+        #email {
+            color: #0073e6;           /* Blue color for the email */
+            text-decoration: none;    /* Remove underline */
+            font-size: 16px;          /* Adjust font size */
+        }
+
+        #email:hover {
+            text-decoration: underline; /* Underline when hovered */
         }
 
         /* Form Input and Textarea Styling */
@@ -124,11 +136,14 @@
     <div class="contact-container">
         <h1>Contact Me</h1>
 
-         <a href="mailto:teshenip@ycstudents.net">My Email</a>
-        
+        <!-- Email in a Box -->
+        <div class="contact-info-box">
+            <a id="email" href="mailto:teshenip@ycstudents.net">teshenip@ycstudents.net</a>
+        </div>
 
         <!-- Contact Form -->
-   <!--     <form action="mailto:tper8771@taehs.org" method="post" enctype="text/plain">
+        <!-- Uncomment the form below if you want to enable it -->
+        <!-- <form action="mailto:tper8771@taehs.org" method="post" enctype="text/plain">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -140,10 +155,7 @@
 
             <input type="submit" value="Send">
             <input type="reset" value="Reset">
-        </form>
--->
-        
-        
+        </form> -->
 
         <!-- Profile Image -->
         <img src="Snapchat-1649114727.jpg" alt="Profile Picture" class="profile-image">
@@ -152,4 +164,3 @@
 
 </body>
 </html>
-
