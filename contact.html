@@ -58,7 +58,8 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 900px; /* Increased max-width */
+            max-width: 1000px; /* Increased max-width */
+            width: 100%; /* Ensures the container takes up full available width */
             margin-top: 20px;
             margin-bottom: 20px;
             margin-right: auto;
@@ -71,10 +72,11 @@
             background-color: #f7f7f7;
             border: 2px solid #007BFF;
             border-radius: 8px;
+            width: 100%; /* Make the form width 100% */
         }
 
         input[type="text"], textarea {
-            width: 100%;
+            width: 100%; /* Make input fields and textarea take up full width */
             padding: 15px; /* Increased padding */
             margin-bottom: 15px;
             border: 2px solid #007BFF;
@@ -100,7 +102,7 @@
 
         /* Profile Image Styling */
         .profile-image {
-            width: 180px; /* Increased image width */
+            width: 200px; /* Increased image width */
             height: auto;
             border: 5px solid white;
             border-radius: 8px;
@@ -124,7 +126,7 @@
         <h1>Contact Me</h1>
 
         <!-- Contact Form -->
-        <form action="mailto:teshenip@nycstudents.net" method="post" enctype="text/plain">
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -144,4 +146,6 @@
     </div>
 
 </body>
+</html>
+
 </html>
