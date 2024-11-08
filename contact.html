@@ -109,22 +109,6 @@
             display: block;
             margin: 20px auto 0 auto;
         }
-
-        .message {
-            color: green;
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .error {
-            color: red;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
@@ -140,11 +124,8 @@
     <div class="contact-container">
         <h1>Contact Me</h1>
 
-        <!-- Success/Error Messages -->
-        <div id="response-message"></div>
-
         <!-- Contact Form -->
-        <form id="contact-form">
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -163,36 +144,6 @@
 
     </div>
 
-    <!-- EmailJS Script -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS with your User ID
-        emailjs.init("iTMQtuPX6V6Lk-3aa");  // Replace with your actual User ID
-
-        const form = document.getElementById("contact-form");
-        const responseMessage = document.getElementById("response-message");
-
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const formData = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("mail").value,
-                message: document.getElementById("comment").value
-            };
-
-            // Send email via EmailJS
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
-                .then(function(response) {
-                    // Success: show Thank You message
-                    responseMessage.innerHTML = "<div class='message'>Thank you! Your message has been sent successfully.</div>";
-                    form.reset(); // Reset form fields
-                }, function(error) {
-                    // Error: show error message
-                    responseMessage.innerHTML = "<div class='error'>There was an error sending the message. Please try again later.</div>";
-                });
-        });
-    </script>
-
 </body>
 </html>
+
