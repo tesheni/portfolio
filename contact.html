@@ -65,51 +65,26 @@
             margin-left: auto;
         }
 
-        /* Email Box Styling */
-        .contact-info-box {
-            background-color: #f4f4f4; /* Light gray background */
-            border: 2px solid #ccc;    /* Light gray border */
-            border-radius: 8px;        /* Rounded corners */
-            padding: 15px;             /* Space inside the box */
-            max-width: 300px;          /* Optional: limit width */
-            margin: 10px 0;            /* Space around the box */
+        /* Contact Info Styling */
+        .contact-info {
+            margin-top: 30px;
         }
 
-        #email {
-            color: #0073e6;           /* Blue color for the email */
-            text-decoration: none;    /* Remove underline */
-            font-size: 16px;          /* Adjust font size */
-        }
-
-        #email:hover {
-            text-decoration: underline; /* Underline when hovered */
-        }
-
-        /* Form Input and Textarea Styling */
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 2px solid #007BFF;
+        .contact-item {
+            background-color: #f4f4f4;
+            border: 2px solid #ccc;
             border-radius: 8px;
-            background: #f7f7f7;
-            font-size: 16px;
+            padding: 15px;
+            margin: 10px 0;
         }
 
-        input[type="submit"], input[type="reset"] {
-            padding: 12px 20px;
-            background-color: #ff80ff;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 15px;
+        .contact-item a {
+            color: #0073e6;
+            text-decoration: none;
         }
 
-        input[type="submit"]:hover, input[type="reset"]:hover {
-            background-color: #cc66ff;
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         /* Profile Image Styling */
@@ -135,27 +110,22 @@
     <!-- Contact Section -->
     <div class="contact-container">
         <h1>Contact Me</h1>
+        <p>Feel free to reach out to me using any of the information below:</p>
 
-        <!-- Email in a Box -->
-        <div class="contact-info-box">
-         <a id="email" href="mailto:teshenip@nycstudents.net">teshenip@nycstudents.net</a>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>School Email:</strong>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=asan6766@taehs.org" target="_blank">asan6766@taehs.org</a>
+            </div>
+            <div class="contact-item">
+                <strong>Personal Email:</strong>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akimsanchez13@gmail.com" target="_blank">akimsanchez13@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone Number:</strong>
+                <a href="tel:+16466263477">+1 (646) 626-3477</a>
+            </div>
         </div>
-
-        <!-- Contact Form -->
-        <!-- Uncomment the form below if you want to enable it -->
-        <!-- <form action="mailto:tper8771@taehs.org" method="post" enctype="text/plain">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="mail">E-mail:</label><br>
-            <input type="email" id="mail" name="mail" required><br><br>
-
-            <label for="comment">Message:</label><br>
-            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
-
-            <input type="submit" value="Send">
-            <input type="reset" value="Reset">
-        </form> -->
 
         <!-- Profile Image -->
         <img src="Snapchat-1649114727.jpg" alt="Profile Picture" class="profile-image">
