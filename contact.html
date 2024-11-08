@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Perpetua', serif;
@@ -12,8 +11,8 @@
             padding: 0;
             background-color: #f0e6ff;
             display: flex;
-            flex-direction: row;
-            min-height: 100vh;
+            flex-direction: row; /* Keeps the side-by-side layout */
+            min-height: 100vh; /* Ensure full viewport height */
         }
 
         h1 {
@@ -24,13 +23,13 @@
         /* Side Navigation Styling */
         .sidenav {
             height: 100vh;
-            width: 250px; /* Increased width */
+            width: 250px;
             background-color: #e6ccff;
             padding-top: 20px;
             color: #ffccff;
             display: flex;
             flex-direction: column;
-            position: fixed;
+            position: fixed; /* Fix it to the left */
             top: 0;
             left: 0;
             padding-left: 20px;
@@ -53,38 +52,40 @@
 
         /* Contact Section Styling */
         .contact-container {
-            margin-left: 270px; /* Increased margin for wider space */
+            margin-left: 270px; /* Create space for the sidenav */
             padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 1000px; /* Increased max-width */
-            width: 100%; /* Ensures the container takes up full available width */
+            width: 100%; /* Make the form take up the available width */
+            max-width: 700px; /* Max width to prevent it from becoming too wide */
             margin-top: 20px;
             margin-bottom: 20px;
             margin-right: auto;
-            margin-left: auto;
+            margin-left: auto; /* Centers the form horizontally */
         }
 
-        /* Contact Form Styling */
+        /* Form Styling */
         form {
             padding: 20px;
             background-color: #f7f7f7;
             border: 2px solid #007BFF;
             border-radius: 8px;
-            width: 100%; /* Make the form width 100% */
+            width: 100%;
         }
 
-        input[type="text"], textarea {
-            width: 100%; /* Make input fields and textarea take up full width */
-            padding: 15px; /* Increased padding */
-            margin-bottom: 15px;
+        /* Spacing between form elements */
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
             border: 2px solid #007BFF;
             border-radius: 8px;
             background: #f7f7f7;
-            font-size: 16px; /* Increased font size */
+            font-size: 16px;
         }
 
+        /* Spacing between the submit/reset buttons */
         input[type="submit"], input[type="reset"] {
             padding: 12px 20px;
             background-color: #ff80ff;
@@ -94,22 +95,28 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 15px;
         }
 
+        /* Buttons hover effect */
         input[type="submit"]:hover, input[type="reset"]:hover {
             background-color: #cc66ff;
         }
 
+        /* Add margin at the bottom of the form */
+        .contact-container form {
+            margin-bottom: 30px;
+        }
+
         /* Profile Image Styling */
         .profile-image {
-            width: 200px; /* Increased image width */
+            width: 200px;
             height: auto;
             border: 5px solid white;
             border-radius: 8px;
             display: block;
             margin: 20px auto 0 auto;
         }
-
     </style>
 </head>
 <body>
@@ -131,7 +138,7 @@
             <input type="text" id="name" name="name" required><br><br>
 
             <label for="mail">E-mail:</label><br>
-            <input type="text" id="mail" name="mail" required><br><br>
+            <input type="email" id="mail" name="mail" required><br><br>
 
             <label for="comment">Comment:</label><br>
             <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
@@ -148,4 +155,3 @@
 </body>
 </html>
 
-</html>
